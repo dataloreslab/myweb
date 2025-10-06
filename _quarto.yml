@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Andrew Kingston"
+  favicon: akalysis.png
+  search: true
+  site-url: https://andrew-kingston.github.io/
+  description: "Ageing, microsimulation, and colourful epidemiology."
+  open-graph: true
+  twitter-card: true
+  repo-url: https://github.com/andrew-kingston/andrew-kingston.github.io
+  repo-actions: [issue]
+
+  navbar:
+    background: "#0B3D91"
+    foreground: light
+    logo: akalysis.png
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Research Programme
+        href: research-programme.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: Teaching / Training
+        href: teaching-training.qmd
+      - text: Consulting
+        href: consulting.qmd
+      - text: Digital Garden
+        href: digital-garden/index.qmd
+      - text: Blog
+        href: blog/index.qmd
+      - text: CV
+        href: cv.qmd
+      - text: Speaking
+        href: speaking.qmd
+      - text: Contact
+        href: contact.qmd
+
+page-footer:
+  left: "© {{< meta year >}} Andrew Kingston"
+  right: "Built with Quarto • Hosted on GitHub Pages"
+
+# Enable the right markdown extensions
+from: markdown+raw_html+fenced_divs+bracketed_spans+link_attributes
+
+format:
+  html:
+    theme: cosmo
+    css:
+      - fonts.css
+      - styles.scss
+    toc: true
+    smooth-scroll: true
+    anchor-sections: true
+    code-copy: true
+
+execute:
+  freeze: auto
+
+metadata-files:
+  - digital-garden/_metadata.yml
+
+filters:
+  - filters/wikilinks.lua
