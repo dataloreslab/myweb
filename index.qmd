@@ -3,113 +3,128 @@ title: "Home"
 page-layout: full
 ---
 
+---
+title: ""          # hide the default "Home" heading
+page-layout: full
+---
+
 ```{=html}
 <style>
-/* ===== AK-scoped styles so nothing escapes ===== */
-.ak-wrap { max-width: 1200px; margin: 0 auto; }
-/* Palette */
+/* ===== Scoped styles (ak2-) so we don't collide with your theme ===== */
 :root {
-  --ak-blue: #0B3D91; --ak-blue-deep:#072b68; --ak-red:#CE1126; --ak-gold:#FFC20E; --ak-ink:#0B0C0C;
+  --ak2-blue: #0B3D91;
+  --ak2-blue-deep:#072b68;
+  --ak2-red:#CE1126;
+  --ak2-gold:#FFC20E;
+  --ak2-ink:#0B0C0C;
+  --ak2-pink:#FF3D8C;
 }
 
-/* Hero */
-.ak-hero{
-  margin-top:1.2rem;border-radius:24px;overflow:hidden;
-  box-shadow:0 26px 64px rgba(0,0,0,.28);
+/* HERO */
+.ak2-hero{
+  margin-top:1.2rem;border-radius:28px;overflow:hidden;
+  box-shadow:0 28px 66px rgba(0,0,0,.28);
   background:
-    radial-gradient(1100px 520px at 5% -20%, rgba(255,194,14,.28), transparent 60%),
-    linear-gradient(135deg, rgba(11,61,145,.98), rgba(206,17,38,.94));
+    radial-gradient(1200px 540px at 6% -20%, rgba(255,194,14,.32), transparent 60%),
+    linear-gradient(135deg, rgba(11,61,145,.98) 0%, rgba(61,0,117,.96) 55%, rgba(206,17,38,.95) 100%);
 }
-.ak-hero__grid{
-  display:grid;grid-template-columns:140px 1fr;min-height:240px
+.ak2-hero__grid{display:grid;grid-template-columns:200px 1fr;align-items:center;min-height:270px}
+.ak2-hero__brand{
+  background:linear-gradient(180deg,var(--ak2-blue),var(--ak2-blue-deep));
+  display:flex;align-items:center;justify-content:center;padding:18px
 }
-.ak-hero__brand{
-  background:linear-gradient(180deg,var(--ak-blue),var(--ak-blue-deep));
-  display:flex;align-items:center;justify-content:center;padding:12px
-}
-.ak-hero__brand img{width:96px;height:auto;display:block;filter:drop-shadow(0 10px 16px rgba(0,0,0,.25))}
-.ak-hero__body{color:#fff;padding:28px 24px 32px}
-.ak-hero__body h1{line-height:1.12;margin:0 0 .75rem 0}
-.ak-hero__body p{opacity:.96;font-size:1.06rem;max-width:70ch;margin:0 0 1rem 0}
+/* a bit larger but sane */
+.ak2-hero__logo{width:150px;height:auto;display:block;border-radius:12px;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.28))}
+.ak2-hero__body{color:#fff;padding:34px 30px 38px}
+.ak2-hero__body h1{margin:.1rem 0 .85rem 0;line-height:1.12;font-weight:800}
+.ak2-pop{background:linear-gradient(90deg,var(--ak2-gold),var(--ak2-pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.ak2-hero__body p{opacity:.96;font-size:1.06rem;max-width:70ch;margin:0 0 1rem}
 
 /* Buttons */
-.ak-btn{display:inline-block;padding:.85rem 1.2rem;border-radius:999px;font-weight:800;text-decoration:none!important;
-  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease; margin-right:.7rem}
-.ak-btn--gold{background:var(--ak-gold);color:var(--ak-ink);box-shadow:0 10px 22px rgba(255,194,14,.35)}
-.ak-btn--ghost{border:2px solid #fff;color:#fff}
-.ak-btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+.ak2-btn{display:inline-block;padding:.95rem 1.35rem;border-radius:999px;font-weight:800;text-decoration:none!important;
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease;margin-right:.7rem}
+.ak2-btn--gold{background:var(--ak2-gold);color:var(--ak2-ink);box-shadow:0 10px 22px rgba(255,194,14,.35)}
+.ak2-btn--ghost{border:2px solid #fff;color:#fff}
+.ak2-btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
 
-/* Section title */
-.ak-title{position:relative;display:inline-block;margin-top:1.25rem}
-.ak-title:after{content:"";position:absolute;left:0;bottom:-6px;width:140px;height:6px;
-  background:linear-gradient(90deg,var(--ak-gold),transparent);border-radius:4px}
+/* SECTION HEADING (we hid the page title, so style this one if you add it later) */
+.ak2-h2{position:relative;display:inline-block;margin-top:1.3rem}
+.ak2-h2:after{content:"";position:absolute;left:0;bottom:-6px;width:160px;height:6px;
+  background:linear-gradient(90deg,var(--ak2-gold),transparent);border-radius:4px}
 
-/* Cards */
-.ak-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:.8rem}
-.ak-card{
-  background:#fff;border-radius:18px;padding:1.25rem 1.3rem;border:2px solid rgba(11,61,145,.08);
-  box-shadow:0 12px 26px rgba(0,0,0,.07);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
-  position:relative;overflow:hidden
+/* CARDS */
+.ak2-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:.9rem}
+.ak2-card{
+  background:#fff;border-radius:20px;padding:1.25rem 1.35rem;position:relative;overflow:hidden;
+  border:2px solid rgba(11,61,145,.08);box-shadow:0 14px 28px rgba(0,0,0,.08);
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease, filter .16s ease;
 }
-.ak-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
-  background:linear-gradient(180deg,var(--ak-gold),rgba(255,194,14,0));border-top-left-radius:18px;border-bottom-left-radius:18px;opacity:.9}
-.ak-card:hover{transform:translateY(-4px);border-color:var(--ak-gold);box-shadow:0 18px 40px rgba(11,61,145,.18)}
-.ak-card h3{margin-top:.15rem}
-.ak-card a{font-weight:700;text-decoration:none}
-.ak-card a:hover{text-decoration:underline;text-underline-offset:3px}
+/* gold rail + faint gradient border for pop */
+.ak2-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
+  background:linear-gradient(180deg,var(--ak2-gold),rgba(255,194,14,0));
+  border-top-left-radius:20px;border-bottom-left-radius:20px;opacity:.95}
+.ak2-card:hover{transform:translateY(-6px);border-color:var(--ak2-gold);
+  box-shadow:0 22px 48px rgba(11,61,145,.2)}
+.ak2-card h3{margin-top:.2rem}
+.ak2-card a{font-weight:800;text-decoration:none;color:var(--ak2-blue)}
+.ak2-card a:hover{text-decoration:underline;text-underline-offset:3px}
 
 /* Responsive */
-@media (max-width:860px){.ak-hero__grid{grid-template-columns:110px 1fr}.ak-hero__brand img{width:80px}}
-@media (max-width:620px){.ak-hero__grid{grid-template-columns:1fr}.ak-hero__brand{justify-content:flex-start;padding:.9rem 1rem}
-  .ak-hero__brand img{width:72px}.ak-hero__body{padding:1.1rem 1rem 1.4rem}}
+@media (max-width:860px){
+  .ak2-hero__grid{grid-template-columns:150px 1fr}
+  .ak2-hero__logo{width:120px}
+}
+@media (max-width:620px){
+  .ak2-hero__grid{grid-template-columns:1fr}
+  .ak2-hero__brand{justify-content:flex-start;padding:14px 16px}
+  .ak2-hero__logo{width:100px}
+  .ak2-hero__body{padding:18px 16px 22px}
+}
 </style>
 
-<div class="ak-wrap">
-  <section class="ak-hero">
-    <div class="ak-hero__grid">
-      <div class="ak-hero__brand">
-        <img src="akalysis.png" alt="AKalysis logo">
-      </div>
-      <div class="ak-hero__body">
-        <h1>Healthy ageing, simulated.<br>Colourful epidemiology, minus the beige.</h1>
-        <p>
-          I’m Andrew Kingston — chartered statistician and epidemiologist. I build
-          microsimulations (PACSim), teach applied epidemiology and data science, and
-          help teams turn messy longitudinal data into clear decisions.
-        </p>
-        <a class="ak-btn ak-btn--gold" href="research-programme.qmd">Explore the Research Programme</a>
-        <a class="ak-btn ak-btn--ghost" href="digital-garden/">Wander the Digital Garden</a>
-      </div>
+<section class="ak2-hero">
+  <div class="ak2-hero__grid">
+    <div class="ak2-hero__brand">
+      <img src="akalysis.png" alt="AKalysis logo" class="ak2-hero__logo">
     </div>
-  </section>
+    <div class="ak2-hero__body">
+      <h1>Healthy ageing, simulated.<br><span class="ak2-pop">Colourful epidemiology, minus the beige.</span></h1>
+      <p>
+        I’m Andrew Kingston — chartered statistician and epidemiologist. I build
+        microsimulations (PACSim), teach applied epidemiology and data science, and
+        help teams turn messy longitudinal data into clear decisions.
+      </p>
+      <a class="ak2-btn ak2-btn--gold" href="research-programme.qmd">Explore the Research Programme</a>
+      <a class="ak2-btn ak2-btn--ghost" href="digital-garden/">Wander the Digital Garden</a>
+    </div>
+  </div>
+</section>
 
-  <h2 class="ak-title">Highlights</h2>
+<section class="ak2-cards">
+  <article class="ak2-card">
+    <h3>PACSim &amp; beyond</h3>
+    <p>Multi-state models, in-silico ageing, and forecasting healthy life expectancy.</p>
+    <a href="research-programme.qmd">Read more →</a>
+  </article>
 
-  <section class="ak-cards">
-    <article class="ak-card">
-      <h3>PACSim &amp; beyond</h3>
-      <p>Multi-state models, in-silico ageing, and forecasting healthy life expectancy.</p>
-      <a href="research-programme.qmd">Read more →</a>
-    </article>
+  <article class="ak2-card">
+    <h3>Teaching / Training</h3>
+    <p>Advanced Epidemiology &amp; Data Science, interactive Quarto notebooks, Bayesian thinking.</p>
+    <a href="teaching-training.qmd">See teaching →</a>
+  </article>
 
-    <article class="ak-card">
-      <h3>Teaching / Training</h3>
-      <p>Advanced Epidemiology &amp; Data Science, interactive Quarto notebooks, Bayesian thinking.</p>
-      <a href="teaching-training.qmd">See teaching →</a>
-    </article>
+  <article class="ak2-card">
+    <h3>Digital Garden</h3>
+    <p>Short, atomic notes with backlinks. Seeds, saplings, evergreens.</p>
+    <a href="digital-garden/">Browse notes →</a>
+  </article>
 
-    <article class="ak-card">
-      <h3>Digital Garden</h3>
-      <p>Short, atomic notes with backlinks. Seeds, saplings, evergreens.</p>
-      <a href="digital-garden/">Browse notes →</a>
-    </article>
-
-    <article class="ak-card">
-      <h3>Consulting</h3>
-      <p>Epi methods, longitudinal modelling, microsimulation, reproducible analytics.</p>
-      <a href="consulting.qmd">How I can help →</a>
-    </article>
-  </section>
-</div>
+  <article class="ak2-card">
+    <h3>Consulting</h3>
+    <p>Epi methods, longitudinal modelling, microsimulation, reproducible analytics.</p>
+    <a href="consulting.qmd">How I can help →</a>
+  </article>
+</section>
 ```
 

@@ -5,9 +5,9 @@ project:
 website:
   title: "Andrew Kingston"
   favicon: akalysis.png
-  search: true
   site-url: https://andrew-kingston.github.io/
-  description: "Ageing, microsimulation, and colourful epidemiology."
+  description: "Healthy ageing, simulated. Colourful epidemiology, minus the beige."
+  search: true
   open-graph: true
   twitter-card: true
   repo-url: https://github.com/andrew-kingston/andrew-kingston.github.io
@@ -20,30 +20,37 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Research Programme
-        href: research-programme.qmd
-      - text: Publications
-        href: publications.qmd
-      - text: Teaching / Training
-        href: teaching-training.qmd
-      - text: Consulting
-        href: consulting.qmd
-      - text: Digital Garden
-        href: digital-garden/index.qmd
-      - text: Blog
-        href: blog/index.qmd
-      - text: CV
-        href: cv.qmd
-      - text: Speaking
-        href: speaking.qmd
-      - text: Contact
-        href: contact.qmd
+      - text: Research
+        menu:
+          - text: Research Programme
+            href: research-programme.qmd
+          - text: Publications
+            href: publications.qmd
+      - text: Learning
+        menu:
+          - text: Teaching / Training
+            href: teaching-training.qmd
+          - text: Digital Garden
+            href: digital-garden/index.qmd
+          - text: Blog
+            href: blog/index.qmd
+      - text: Collaboration
+        menu:
+          - text: Consulting
+            href: consulting.qmd
+          - text: Speaking
+            href: speaking.qmd
+          - text: Contact
+            href: contact.qmd
+      - text: About
+        menu:
+          - text: CV
+            href: cv.qmd
 
 page-footer:
   left: "© {{< meta year >}} Andrew Kingston"
   right: "Built with Quarto • Hosted on GitHub Pages"
 
-# Enable the right markdown extensions
 from: markdown+raw_html+fenced_divs+bracketed_spans+link_attributes
 
 format:
@@ -59,9 +66,3 @@ format:
 
 execute:
   freeze: auto
-
-metadata-files:
-  - digital-garden/_metadata.yml
-
-filters:
-  - filters/wikilinks.lua

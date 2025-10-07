@@ -1,0 +1,115 @@
+---
+title: "Home"
+page-layout: full
+---
+
+```{=html}
+<style>
+/* ===== AK-scoped styles so nothing escapes ===== */
+.ak-wrap { max-width: 1200px; margin: 0 auto; }
+/* Palette */
+:root {
+  --ak-blue: #0B3D91; --ak-blue-deep:#072b68; --ak-red:#CE1126; --ak-gold:#FFC20E; --ak-ink:#0B0C0C;
+}
+
+/* Hero */
+.ak-hero{
+  margin-top:1.2rem;border-radius:24px;overflow:hidden;
+  box-shadow:0 26px 64px rgba(0,0,0,.28);
+  background:
+    radial-gradient(1100px 520px at 5% -20%, rgba(255,194,14,.28), transparent 60%),
+    linear-gradient(135deg, rgba(11,61,145,.98), rgba(206,17,38,.94));
+}
+.ak-hero__grid{
+  display:grid;grid-template-columns:140px 1fr;min-height:240px
+}
+.ak-hero__brand{
+  background:linear-gradient(180deg,var(--ak-blue),var(--ak-blue-deep));
+  display:flex;align-items:center;justify-content:center;padding:12px
+}
+.ak-hero__brand img{width:96px;height:auto;display:block;filter:drop-shadow(0 10px 16px rgba(0,0,0,.25))}
+.ak-hero__body{color:#fff;padding:28px 24px 32px}
+.ak-hero__body h1{line-height:1.12;margin:0 0 .75rem 0}
+.ak-hero__body p{opacity:.96;font-size:1.06rem;max-width:70ch;margin:0 0 1rem 0}
+
+/* Buttons */
+.ak-btn{display:inline-block;padding:.85rem 1.2rem;border-radius:999px;font-weight:800;text-decoration:none!important;
+  transition:transform .15s ease, box-shadow .15s ease, filter .15s ease; margin-right:.7rem}
+.ak-btn--gold{background:var(--ak-gold);color:var(--ak-ink);box-shadow:0 10px 22px rgba(255,194,14,.35)}
+.ak-btn--ghost{border:2px solid #fff;color:#fff}
+.ak-btn:hover{transform:translateY(-2px);filter:brightness(1.03)}
+
+/* Section title */
+.ak-title{position:relative;display:inline-block;margin-top:1.25rem}
+.ak-title:after{content:"";position:absolute;left:0;bottom:-6px;width:140px;height:6px;
+  background:linear-gradient(90deg,var(--ak-gold),transparent);border-radius:4px}
+
+/* Cards */
+.ak-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.2rem;margin-top:.8rem}
+.ak-card{
+  background:#fff;border-radius:18px;padding:1.25rem 1.3rem;border:2px solid rgba(11,61,145,.08);
+  box-shadow:0 12px 26px rgba(0,0,0,.07);transition:transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  position:relative;overflow:hidden
+}
+.ak-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;
+  background:linear-gradient(180deg,var(--ak-gold),rgba(255,194,14,0));border-top-left-radius:18px;border-bottom-left-radius:18px;opacity:.9}
+.ak-card:hover{transform:translateY(-4px);border-color:var(--ak-gold);box-shadow:0 18px 40px rgba(11,61,145,.18)}
+.ak-card h3{margin-top:.15rem}
+.ak-card a{font-weight:700;text-decoration:none}
+.ak-card a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* Responsive */
+@media (max-width:860px){.ak-hero__grid{grid-template-columns:110px 1fr}.ak-hero__brand img{width:80px}}
+@media (max-width:620px){.ak-hero__grid{grid-template-columns:1fr}.ak-hero__brand{justify-content:flex-start;padding:.9rem 1rem}
+  .ak-hero__brand img{width:72px}.ak-hero__body{padding:1.1rem 1rem 1.4rem}}
+</style>
+
+<div class="ak-wrap">
+  <section class="ak-hero">
+    <div class="ak-hero__grid">
+      <div class="ak-hero__brand">
+        <img src="akalysis.png" alt="AKalysis logo">
+      </div>
+      <div class="ak-hero__body">
+        <h1>Healthy ageing, simulated.<br>Colourful epidemiology, minus the beige.</h1>
+        <p>
+          I’m Andrew Kingston — chartered statistician and epidemiologist. I build
+          microsimulations (PACSim), teach applied epidemiology and data science, and
+          help teams turn messy longitudinal data into clear decisions.
+        </p>
+        <a class="ak-btn ak-btn--gold" href="research-programme.qmd">Explore the Research Programme</a>
+        <a class="ak-btn ak-btn--ghost" href="digital-garden/">Wander the Digital Garden</a>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="ak-title">Highlights</h2>
+
+  <section class="ak-cards">
+    <article class="ak-card">
+      <h3>PACSim &amp; beyond</h3>
+      <p>Multi-state models, in-silico ageing, and forecasting healthy life expectancy.</p>
+      <a href="research-programme.qmd">Read more →</a>
+    </article>
+
+    <article class="ak-card">
+      <h3>Teaching / Training</h3>
+      <p>Advanced Epidemiology &amp; Data Science, interactive Quarto notebooks, Bayesian thinking.</p>
+      <a href="teaching-training.qmd">See teaching →</a>
+    </article>
+
+    <article class="ak-card">
+      <h3>Digital Garden</h3>
+      <p>Short, atomic notes with backlinks. Seeds, saplings, evergreens.</p>
+      <a href="digital-garden/">Browse notes →</a>
+    </article>
+
+    <article class="ak-card">
+      <h3>Consulting</h3>
+      <p>Epi methods, longitudinal modelling, microsimulation, reproducible analytics.</p>
+      <a href="consulting.qmd">How I can help →</a>
+    </article>
+  </section>
+</div>
+```
+
